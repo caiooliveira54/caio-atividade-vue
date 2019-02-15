@@ -63,7 +63,7 @@ export default {
   },
   mounted(){
     var self = this;
-    axios.get('https://api.github.com/user/caiooliveira54/repos')
+    axios.get('https://api.github.com/users/caiooliveira54/repos')
     .then(function(res){
       self.mainItems = res.data;
       //console.log(self.mainItems[0].name);
