@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data () {
     return {
@@ -59,6 +60,17 @@ export default {
     }
   },
   methods: {
+  },
+  mounted(){
+    var self = this;
+    axios.get('https://api.github.com/user/caiooliveira54/repos')
+    .then(function(res){
+      self.mainItems = res.data;
+      //console.log(self.mainItems[0].name);
+    })
+    .catch(function(error){
+      console.log('Erro: ',error);
+    })
   }
 }
 </script>
